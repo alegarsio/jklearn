@@ -1,6 +1,7 @@
 import Data.DataSet
+import Abstract.SuperVised
 
-class LogisticRegression {
+class LogisticRegression implements SuperVised {
     
     init(learningRate, iterations) {
         this.lr = learningRate
