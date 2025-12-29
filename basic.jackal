@@ -1,4 +1,4 @@
-import jklearn.Data.DataSet
+import Data.DataSet
 /**
  * Forward Declaration from JkLearn/Data
 **/
