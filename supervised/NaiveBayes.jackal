@@ -2,6 +2,7 @@ import Data.DataSet
 import Abstract.SuperVised
 
 class NaiveBayes implements SuperVised {
+    
     init() {
         this.modelPtr = nil;
     }
