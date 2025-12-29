@@ -1,6 +1,6 @@
-import jklearn.supervised.Knn
-import jklearn.supervised.Regression.LogisticRegression
-import jklearn.supervised.NaiveBayes
+import supervised.Knn
+import supervised.Regression.LogisticRegression
+import supervised.NaiveBayes
 
 class Regression extends LogisticRegression {}
 

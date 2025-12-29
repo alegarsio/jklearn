@@ -1,0 +1,21 @@
+class KMeans {
+    
+    init(k, iterations) {
+        this.k = k;
+        this.iter = iterations;
+        this.centroids = nil;
+    }
+
+    func fit(dataOnly) {
+        this.centroids = __kmeans_fit(dataOnly, this.k, this.iter);
+        return this;
+    }
+
+    func predict(newData) {
+        let results = [];
+        for (point in newData) {
+            results.push(__kmeans_predict(point, this.centroids));
+        }
+        return results;
+    }
+}

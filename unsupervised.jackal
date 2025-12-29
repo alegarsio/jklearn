@@ -1,0 +1,4 @@
+import unsupervised.KMeans
+
+class Kme extends KMeans {}
+

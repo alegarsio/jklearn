@@ -1,5 +1,5 @@
-import jklearn.Data.DataSet
-import jklearn.Abstract.SuperVised
+import Data.DataSet
+import Abstract.SuperVised
 
 class KNeighrest implements SuperVised{
     
