@@ -9,6 +9,10 @@ class BasicMatrix {
         return this
     }
 
+    func det(){
+        return __matrix_det(this.data)
+    }
+
     func dot(other){
         this.data = __matrix_dot(this.data,other)
         return this
