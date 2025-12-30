@@ -9,8 +9,13 @@ class BasicMatrix {
         return this
     }
 
-    func dot(otherArray){
-        this.data = __matrix_dot(this.data,otherArray)
+    func dot(other){
+        this.data = __matrix_dot(this.data,other)
+        return this
+    }
+
+    func add(other){
+        this.data = __matrix_add(this.data,other)
         return this
     }
 
