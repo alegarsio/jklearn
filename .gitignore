@@ -1,3 +1,4 @@
 std/
 test.jackal
 jackal
+.env

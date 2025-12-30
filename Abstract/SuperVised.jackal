@@ -1,8 +1,29 @@
+/**
+ * @author Alegrarsio Gifta Lesmana
+ * interface supervised
+ * represents the sets of reusable function for supervised learning
+ * this interface can be implemented in all over supervised class 
+ * use @override to mark in usage
+**/
+
 interface SuperVised{
-    
+
+    /**
+     * fit()
+     * use for fit and learn from the train dataset 
+    **/
+
     func fit() ;
 
+    /**
+     * predict()
+     * use for predict output from train model
+    **/
     func predict();
     
+    /*
+     * evaluate() 
+     * use to see accuracy score from the trained model 
+    **/
     func evaluate() ;
 }
