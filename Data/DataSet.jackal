@@ -45,7 +45,8 @@ class DataSet extends PreProcessor {
      * @return an array of zipped dataset with labels
     **/
     func zip(){
-        return __zip(this.data , this.labels)
+        this.data = __zip(this.data , this.labels)
+        return this
     }
 
     /**

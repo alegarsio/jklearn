@@ -7,8 +7,5 @@ import supervised.NaiveBayes
 **/
 class Regression extends LogisticRegression {}
 class Linear extends LinearRegression {}
-
 class Knn extends KNeighrest {}
 class Nb extends NaiveBayes {}
-
-
