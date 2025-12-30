@@ -1,4 +1,4 @@
-class Matrix {
+class BasicMatrix {
 
     init(data : Array){
         this.data = data
