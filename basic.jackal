@@ -1,11 +1,11 @@
 import Data.DataSet
-import Numeric.Matrix
+import Numeric.Matrix.BasicMatrix
 import Processor.PreProcessor
 /**
  * Forward Declaration from JkLearn/Data
 **/
 class Data extends DataSet {}
-class Mt extends Matrix {}
+class Matrix extends BasicMatrix {}
 class Process extends PreProcessor {}
 
 
