@@ -1,8 +1,10 @@
+import Processor.PreProcessor
+
 /**
  * @author Alegrarsio gifta lesmana
  * the dataset class is the wrapper class for your data set
 **/
-class DataSet {
+class DataSet extends PreProcessor {
 
     /**
      * in the dataset constructor, the argument must be array in n demmension
