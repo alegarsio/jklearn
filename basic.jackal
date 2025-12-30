@@ -1,9 +1,10 @@
 import Data.DataSet
+import Numeric.Matrix
 /**
  * Forward Declaration from JkLearn/Data
 **/
 class Data extends DataSet {}
 
-
+class Mt extends Matrix {}
 
 
