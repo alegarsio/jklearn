@@ -1,0 +1,26 @@
+class LinearRegression{
+
+    init(data : Array){
+        this.data = data
+    }
+
+    func predict() {
+        let model = predicts(this.data[0], this.data[1])
+        let m = model[0]
+        let c = model[1]
+        
+        let trend = []
+        for (i in this.data[0]) {
+            trend.push((m * i) + c)
+        }
+        
+        this.data.push(trend)
+        return this
+    }
+
+    func exports(){
+        return this.data
+    }
+    
+    
+}
