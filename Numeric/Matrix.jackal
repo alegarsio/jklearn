@@ -13,6 +13,9 @@ class Matrix {
         let score = native_correlate(this.data, otherArray)
         return score
     }
-    
+
+    func exports(){
+        return this.data
+    }
 
 }
