@@ -49,49 +49,11 @@ The library is developed with a strong focus on Explainable AI (XAI) and low-lev
 - Data Shuffling  
   Synchronized shuffling of features and labels to reduce training bias.
 
-## Example Usage
+## Installation
 
-### Dataset Creation and Normalization
-
-The following example demonstrates how to create a dataset, normalize features, and export the processed data.
-
-```jackal
-import jklearn.basic
-
-let data = [
-    [10, 20],
-    [20, 30],
-    [30, 40],
-    [40, 50]
-]
-
-let labels = [1, 1, 0, 0]
-
-let dataset = DataSet(data, labels)
-    .normalize()
-    .exports()
-
-println(dataset)
-
+JackalML is part of the Jackal ecosystem.  
+Import the required modules directly in your Jackal source file.
 
 ```jackal
 import basic
 import supervised
-
-let data = [
-    [10, 20],
-    [20, 30],
-    [30, 40],
-    [40, 50],
-    [50, 40]
-]
-
-let labels = [1, 1, 0, 0]
-
-let dataset = DataSet(data, labels)
-
-let knn = Knn(3)
-    .fit(dataset)
-    .predict([[10, 21]])
-
-println(knn)
