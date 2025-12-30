@@ -2,3 +2,4 @@ std/
 test.jackal
 jackal
 .env
+index.py

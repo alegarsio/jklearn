@@ -1,0 +1,18 @@
+class Matrix {
+
+    init(data : Array){
+        this.data = data
+    }
+
+    func transpose(){
+        this.data = native_transpose(this.data)
+        return this
+    }
+
+    func correlate(otherArray) {
+        let score = native_correlate(this.data, otherArray)
+        return score
+    }
+    
+
+}
