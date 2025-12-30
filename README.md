@@ -72,3 +72,26 @@ let dataset = DataSet(data, labels)
     .exports()
 
 println(dataset)
+
+
+```jackal
+import basic
+import supervised
+
+let data = [
+    [10, 20],
+    [20, 30],
+    [30, 40],
+    [40, 50],
+    [50, 40]
+]
+
+let labels = [1, 1, 0, 0]
+
+let dataset = DataSet(data, labels)
+
+let knn = Knn(3)
+    .fit(dataset)
+    .predict([[10, 21]])
+
+println(knn)
