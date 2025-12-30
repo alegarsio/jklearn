@@ -59,10 +59,6 @@ Import the required modules directly in your Jackal source file.
 import basic
 import supervised
 
-```jackal
-import basic
-import supervised
-
 
 let data = [
     [10, 20],
