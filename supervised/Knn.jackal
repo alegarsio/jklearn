@@ -26,6 +26,15 @@ class KNeighrest implements SuperVised{
         }
         return results
     }
+    
+    func prob(newData){
+        let results = []
+        for (point in this.data) {
+            let prob = __knn_predictprob(point, this.historyData, this.historyLabels, this.k)
+            results.push(prob)
+        }
+        return results
+    }
 
     @override
     func evaluate(testDataSet) {
