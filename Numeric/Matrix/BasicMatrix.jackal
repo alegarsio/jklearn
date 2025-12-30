@@ -9,6 +9,11 @@ class BasicMatrix {
         return this
     }
 
+    func dot(otherArray){
+        this.data = __matrix_dot(this.data,otherArray)
+        return this
+    }
+
     func correlate(otherArray) {
         let score = native_correlate(this.data, otherArray)
         return score
