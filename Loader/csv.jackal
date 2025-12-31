@@ -5,13 +5,8 @@ class Csv{
         this.data = []
     }
 
-    func read(){
-        this.data =  __read_csv(this.filename)
-        return this
-    }
-
-    func exports(){
-        return this.data
+    func load(){
+        return  __read_csv(this.filename)
     }
 
     
