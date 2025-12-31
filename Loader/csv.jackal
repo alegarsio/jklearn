@@ -2,10 +2,9 @@ class Csv{
 
     init(filename : String){
         this.filename = filename
-        this.data = []
     }
 
-    func load(){
+    func load() -> Array{
         return  __read_csv(this.filename)
     }
 
