@@ -8,4 +8,4 @@ import Loader.csv
 class Data extends DataSet {}
 class Matrix extends BasicMatrix {}
 class Process extends PreProcessor {}
-class LoadCsv extends CSV {}
+class LoadCsv extends Csv {}

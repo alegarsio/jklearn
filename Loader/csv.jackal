@@ -1,11 +1,19 @@
-class CSV{
+class Csv{
 
     init(filename : String){
         this.filename = filename
+        this.data = []
     }
 
     func read(){
-        return __read_csv(this.filename)
+        this.data =  __read_csv(this.filename)
+        return this
     }
+
+    func exports(){
+        return this.data
+    }
+
     
+
 }
