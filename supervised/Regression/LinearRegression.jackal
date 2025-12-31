@@ -1,43 +1,24 @@
-import Numeric.Matrix.BasicMatrix
+class LinearRegression{
 
-class LinearRegression {
-
-    init(lr, epochs) {
-        this.lr = lr
-        this.epochs = epochs
-        this.weights = nil
+    init(data : Array){
+        this.data = data
     }
 
-    func train(X, y) {
-        let n_samples = X.length()
-        let n_features = X[0].length()
-
-        let w_data = []
-        for (let i = 0; i < n_features; i++) {
-            let row = [0.0]
-            w_data.push(row)
+    func predict() {
+        let model = predicts(this.data[0], this.data[1])
+        let m = model[0]
+        let c = model[1]
+        
+        let trend = []
+        for (i in this.data[0]) {
+            trend.push((m * i) + c)
         }
-        this.weights = BasicMatrix(w_data)
-
-        for (let i = 0; i < this.epochs; i++) {
-            let current_weights = this.weights.exports()
-            
-            let prediction = BasicMatrix(X).dot(current_weights)
-            let error = prediction.sub(y).exports()
-
-            let x_t = BasicMatrix(X).transpose().exports()
-            let gradient = BasicMatrix(x_t).dot(error)
-
-            let learning_rate_scaled = this.lr / n_samples
-            let step = gradient.scalarmul(learning_rate_scaled).exports()
-            
-            this.weights.sub(step)
-        }
+        
+        this.data.push(trend)
+        return this
     }
 
-    func predict(X) {
-        let x_mat = BasicMatrix(X)
-        let current_weights = this.weights.exports()
-        return x_mat.dot(current_weights).exports()
+    func exports(){
+        return this.data
     }
 }

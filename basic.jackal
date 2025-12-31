@@ -1,12 +1,11 @@
 import Data.DataSet
 import Numeric.Matrix.BasicMatrix
 import Processor.PreProcessor
+import Loader.csv
 /**
  * Forward Declaration from JkLearn/Data
 **/
 class Data extends DataSet {}
 class Matrix extends BasicMatrix {}
 class Process extends PreProcessor {}
-
-
-
+class LoadCsv extends CSV {}

@@ -1,0 +1,11 @@
+class CSV{
+
+    init(filename : String){
+        this.filename = filename
+    }
+
+    func read(){
+        return __read_csv(this.filename)
+    }
+    
+}
