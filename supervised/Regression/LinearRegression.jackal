@@ -1,6 +1,7 @@
-import std.Numeric.Matrix.BasicMatrix
+import Numeric.Matrix.BasicMatrix
 
 class LinearRegression {
+
     init(lr, epochs) {
         this.lr = lr
         this.epochs = epochs
@@ -8,17 +9,17 @@ class LinearRegression {
     }
 
     func train(X, y) {
-        let n_samples = X.count
-        let n_features = X[0].count
+        let n_samples = X.length()
+        let n_features = X[0].length()
 
         let w_data = []
-        for (let i = 0; i < n_features; i = i + 1) {
+        for (let i = 0; i < n_features; i++) {
             let row = [0.0]
             w_data.push(row)
         }
         this.weights = BasicMatrix(w_data)
 
-        for (let i = 0; i < this.epochs; i = i + 1) {
+        for (let i = 0; i < this.epochs; i++) {
             let current_weights = this.weights.exports()
             
             let prediction = BasicMatrix(X).dot(current_weights)
