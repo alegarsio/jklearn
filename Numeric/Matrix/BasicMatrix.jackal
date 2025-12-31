@@ -13,6 +13,11 @@ class BasicMatrix {
         return __matrix_det(this.data)
     }
 
+    func scalarmul(scalar ){
+        this.data = __matrix_scalar(this.data , scalar)
+        return this
+    }
+
     func dot(other){
         this.data = __matrix_dot(this.data,other)
         return this

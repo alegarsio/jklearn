@@ -3,3 +3,7 @@ test.jackal
 jackal
 .env
 index.py
+
+*.php
+*.py
+*.c++
