@@ -12,6 +12,14 @@ class BasicTensor <T> {
         }
     }
 
+    func sum() -> Int {
+        return __tensor_sum(this.data)
+    }
+
+    func mean() -> Int{
+        return __tensor_mean(this.data)
+    }
+
     func add(value) {
         this.data = __tensor_add(this.data, value);
         return this;

@@ -54,8 +54,8 @@ The library is developed with a strong focus on Explainable AI (XAI) and low-lev
 JackalML is part of the Jackal ecosystem.  
 Import the required modules directly in your Jackal source file.
 
-## Usage
-```jackal
+## Usage KNN
+```js
 import basic
 import supervised
 
@@ -77,3 +77,4 @@ let knn = Knn(3)
     .predict([[10, 21]])
 
 println(knn)
+
