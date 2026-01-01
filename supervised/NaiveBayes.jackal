@@ -5,6 +5,7 @@ class NaiveBayes implements SuperVised {
     
     init() {
         this.modelPtr = nil;
+        this.lastResults = [];
     }
 
     func fit(dataSetObject : DataSet) {
@@ -17,15 +18,20 @@ class NaiveBayes implements SuperVised {
 
     func predict(newData) {
         let results = [];
-        for (point in newData) {
-            let label = __nb_predict(point, this.modelPtr);
+        for (let i = 0; i < len(newData); i = i + 1) {
+            let label = __nb_predict(newData[i], this.modelPtr);
             results.push(label);
         }
+        this.lastResults = results;
         return results;
     }
 
-    func evaluate(testDataSet) {
+    func evaluate(testDataSet : DataSet) {
         let predictions = this.predict(testDataSet.getData());
         return __accuracy(predictions, testDataSet.getLabels());
+    }
+
+    func getResults() {
+        return this.lastResults;
     }
 }
