@@ -1,6 +1,6 @@
 import Tensors.BasicTensor
 
-class BasicVector extends BasicTensor {
+class BasicVector extends BasicTensor<T> {
 
     func dotProduct(otherVector : BasicTensor) {
 
