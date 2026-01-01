@@ -1,24 +1,34 @@
-class LinearRegression{
+import Data.DataSet
+import Abstract.SuperVised
 
-    init(data : Array){
-        this.data = data
+class LinearRegression implements SuperVised {
+    
+    init(lr, epochs) {
+        this.slope = 0.0
+        this.intercept = 0.0
     }
 
-    func predict() {
-        let model = predicts(this.data[0], this.data[1])
-        let m = model[0]
-        let c = model[1]
-        
-        let trend = []
-        for (i in this.data[0]) {
-            trend.push((m * i) + c)
-        }
-        
-        this.data.push(trend)
+    func train(X, y) {
+        let results = __native_linear_regression(X, y)
+        this.slope = results[0]
+        this.intercept = results[1]
         return this
     }
 
-    func exports(){
-        return this.data
+    func predict(newData) {
+        let results = []
+        for (let i = 0; i < len(newData); i = i + 1) {
+            let x_val = newData[i]
+            let y_pred = (this.slope * x_val) + this.intercept
+            results.push(y_pred)
+        }
+        return results
     }
+
+    func evaluate(testDataSet) {
+        let predictions = this.predict(testDataSet.getData())
+        return __accuracy(predictions, testDataSet.getLabels())
+    }
+
+    
 }
