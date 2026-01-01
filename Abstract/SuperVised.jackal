@@ -27,7 +27,15 @@ interface SuperVised{
     **/
     func evaluate() ;
 
-    func save() ;
-    
-    func load();
+    // /**
+    //  * save()
+    //  * use to save model in jml format
+    // **/
+    // func save() ;
+
+    // /**
+    //  * load()
+    //  * use to load model in jml format 
+    // **/
+    // func load();
 }
