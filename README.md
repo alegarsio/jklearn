@@ -56,11 +56,31 @@ Import the required modules directly in your Jackal source file.
 
 ## Usage Csv
 ```js
+
 import basic
 
 let data = Csv("a.csv").load()
 
 println(data)
+
+```
+
+## Usage Naive Bayes
+```js
+
+import supervised
+import basic
+
+let data = Csv("a.csv").load()
+
+let labels = [1,1,0,0]
+
+let dataset = Data(data,labels)
+
+let nb = NaiveBayes().fit(dataset).predict([[10,100]])
+
+println(nb)
+
 
 ```
 
