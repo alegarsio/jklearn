@@ -54,6 +54,17 @@ The library is developed with a strong focus on Explainable AI (XAI) and low-lev
 JackalML is part of the Jackal ecosystem.  
 Import the required modules directly in your Jackal source file.
 
+## Usage Csv
+```js
+import basic
+
+let data = Csv("a.csv").load()
+
+println(data)
+
+```
+
+
 ## Usage KNN
 ```js
 import basic
