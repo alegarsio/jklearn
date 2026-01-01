@@ -1,13 +1,31 @@
 class BasicTensor <T> {
 
-    init(data : Array) {
+    init(data : Array , shape) {
         this.data = data;
+        if (shape == nil){
+            this.shape = [data.length()]
+        }
+        else {
+            this.shape = shape
+        }
     }
 
     func add(value) {
         this.data = __tensor_add(this.data, value);
         return this;
     }
+
+    func reshape(newShape){
+        let isValid = __tensor_shape(this.data,newShape)
+        
+        if (isValid == 1) {
+            this.shape = newShape
+            return this
+        }
+        
+        return nil
+    }
+    
 
     func sub(value) {
         this.data = __tensor_sub(this.data, value);
@@ -17,6 +35,10 @@ class BasicTensor <T> {
     func mul(value) {
         this.data = __tensor_mul(this.data, value);
         return this;
+    }
+
+    func getShape(){
+        return this.shape
     }
 
     func exports() {
