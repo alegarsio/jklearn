@@ -77,4 +77,20 @@ let knn = Knn(3)
     .predict([[10, 21]])
 
 println(knn)
+```
+
+## Usage Tensor
+```js
+import Tensor
+
+let raw = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0]
+
+let t = Tensor<Float>(raw, [20])
+                    .reshape([3, 4])
+                    .add(5.0)
+                    .mul(2.0)
+                    .exports()
+
+println(t)
+```
 
