@@ -26,4 +26,8 @@ interface SuperVised{
      * use to see accuracy score from the trained model 
     **/
     func evaluate() ;
+
+    func save() ;
+    
+    func load();
 }
