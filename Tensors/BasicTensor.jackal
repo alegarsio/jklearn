@@ -2,7 +2,7 @@ import Abstract.SuperVised
 
 class BasicTensor <T> {
 
-    init(data : Array , shape) {
+    init(data : Array , shape : Array) {
         this.data = data;
         if (shape == nil){
             this.shape = [data.length()]
@@ -18,6 +18,11 @@ class BasicTensor <T> {
 
     func mean() -> Int{
         return __tensor_mean(this.data)
+    }
+
+    func flatten(){
+        this.shape = [this.data.length()]
+        return this
     }
 
     func add(value) {
