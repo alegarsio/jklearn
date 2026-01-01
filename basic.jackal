@@ -11,4 +11,4 @@ class Data extends DataSet {}
 class Matrix extends BasicMatrix {}
 class Process extends PreProcessor {}
 class LoadCsv extends Csv {}
-class Tensor extends BasicTensor<T> {}
+// class Tensor extends BasicTensor<T> {}

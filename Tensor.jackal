@@ -1,0 +1,3 @@
+import Tensors.BasicTensor
+
+class Tensor extends BasicTensor<T> {}
