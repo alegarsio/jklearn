@@ -1,0 +1,25 @@
+class BasicTensor <T> {
+
+    init(data : Array) {
+        this.data = data;
+    }
+
+    func add(value) {
+        this.data = __tensor_add(this.data, value);
+        return this;
+    }
+
+    func sub(value) {
+        this.data = __tensor_sub(this.data, value);
+        return this;
+    }
+
+    func mul(value) {
+        this.data = __tensor_mul(this.data, value);
+        return this;
+    }
+
+    func exports() {
+        return this.data;
+    }
+}

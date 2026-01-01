@@ -1,8 +1,8 @@
 import Data.DataSet
 import Abstract.SuperVised
 
-class LinearRegression implements SuperVised {
-    
+class LinearRegression  {
+
     init(lr, epochs) {
         this.slope = 0.0
         this.intercept = 0.0
@@ -29,6 +29,4 @@ class LinearRegression implements SuperVised {
         let predictions = this.predict(testDataSet.getData())
         return __accuracy(predictions, testDataSet.getLabels())
     }
-
-    
 }
