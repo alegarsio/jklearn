@@ -12,6 +12,23 @@ class BasicTensor <T> {
         }
     }
 
+    func dot(otherTensor) {
+        let newData = __tensor_dot(
+            this.data, this.shape, 
+            otherTensor.data, otherTensor.shape
+        )
+
+        if (newData == nil) {
+            println("Error: Incompatible dimensions for dot product")
+            return nil
+        }
+
+        this.data = newData
+        this.shape = [this.shape[0], otherTensor.getShape()[1]]
+
+        return this
+    }
+
     func sum() -> Int {
         return __tensor_sum(this.data)
     }
