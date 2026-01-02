@@ -1,0 +1,82 @@
+import Tensors.BasicTensor
+
+class SmartCsv extends BasicTensor <T> {
+
+    func fromCsv(path, hasHeader) {
+        let raw = __read_csv_advance(path)
+        
+        if (raw == nil) {
+            println("Error: File not found")
+            return nil
+        }
+
+        let startRow = 0
+        if (hasHeader == 1) {
+            startRow = 1
+        }
+
+        let rowCount = raw.length() - startRow
+        let colCount = raw[0].length()
+        let flatData = []
+
+        for (let i = startRow; i < raw.length(); i = i + 1) {
+            let currentRow = raw[i]
+            for (let j = 0; j < colCount; j = j + 1) {
+                let val = currentRow[j]
+                
+                if (type(val) == "string") {
+                    flatData.push(0.0) 
+                } else {
+                    flatData.push(val)
+                }
+            }
+        }
+
+        this.data = flatData
+        this.shape = [rowCount, colCount]
+        
+        return this
+    }
+
+    func dropColumn(colIndex) {
+        let newFlatData = []
+        let rows = this.shape[0]
+        let cols = this.shape[1]
+        
+        for (let i = 0; i < rows; i = i + 1) {
+            for (let j = 0; j < cols; j = j + 1) {
+                if (j != colIndex) {
+                    let index = (i * cols) + j
+                    newFlatData.push(this.data[index])
+                }
+            }
+        }
+        
+        this.data = newFlatData
+        this.shape = [rows, cols - 1]
+        return this
+    }
+
+    func splitXY(targetColIndex) {
+        let xData = []
+        let yData = []
+        let rows = this.shape[0]
+        let cols = this.shape[1]
+
+        for (let i = 0; i < rows; i = i + 1) {
+            for (let j = 0; j < cols; j = j + 1) {
+                let index = (i * cols) + j
+                if (j == targetColIndex) {
+                    yData.push(this.data[index])
+                } else {
+                    xData.push(this.data[index])
+                }
+            }
+        }
+
+        let X = BasicTensor(xData, [rows, cols - 1])
+        let Y = BasicTensor(yData, [rows, 1])
+        
+        return [X, Y]
+    }
+}
