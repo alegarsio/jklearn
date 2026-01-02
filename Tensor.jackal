@@ -2,4 +2,5 @@ import Tensors.BasicTensor
 import Tensors.Vector.BasicVector
 
 class Tensor extends BasicTensor<T> {}
+
 class Vector extends BasicVector {}

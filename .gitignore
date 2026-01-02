@@ -9,3 +9,6 @@ index.py
 *.c++
 *.csv
 *.jml
+*.js
+*.java
+*.class
