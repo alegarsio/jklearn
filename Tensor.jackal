@@ -1,6 +1,7 @@
 import Tensors.BasicTensor
 import Tensors.Vector.BasicVector
-
-class Tensor extends SmartCsv {}
-
-class Vector extends BasicVector {}
+/**
+ * this forward declaration is the part of tensor library
+**/
+class Tensor : SmartCsv {}
+class Vector : BasicVector {}

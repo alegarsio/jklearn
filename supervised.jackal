@@ -6,8 +6,8 @@ import Numeric.Matrix.ConfussionMatrix
 /**
  * this file contain the forward declaration for jklearn all supervised algorithm
 **/
-class Regression extends LogisticRegression {}
-class Linear extends LinearRegression {}
-class Knn extends KNeighrest {}
-class Naiv_b extends NaiveBayes {}
-class Confusion_M extends ConfussionMatrix {}
+class Regression : LogisticRegression {}
+class Linear : LinearRegression {}
+class Knn : KNeighrest {}
+class Naiv_b : NaiveBayes {}
+class Confusion_M : ConfussionMatrix {}
