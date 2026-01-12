@@ -1,13 +1,21 @@
+/**
+ * @author Alegrarsio gifta lesmana
+ * Csv class provides the sets of function to load CSV file 
+**/
 class Csv{
-
-    init(filename : String){
-        this.filename = filename
-    }
-
-    func load() -> Array{
-        return  __read_csv(this.filename)
-    }
-
     
+    /**
+     * init()
+     * @param filename you can also use the path such as /bin/data/data.csv
+     * @return None
+    **/
+    init(filename : String) -> None = this.filename = filename
+    
+    /**
+     * load() is a function to load csv file 
+     * @param None
+     * @return Array
+    **/
+    func load() -> Array = __read_csv(this.filename)
 
 }
