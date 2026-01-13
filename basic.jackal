@@ -7,8 +7,12 @@ import Tensors.BasicTensor
 /**
  * Forward Declaration from JkLearn/Data
 **/
+@final
 class Data extends DataSet {}
+@final
 class Matrix extends BasicMatrix {}
+@final
 class Process extends PreProcessor {}
+@final
 class LoadCsv extends Csv {}
 // class Tensor extends BasicTensor<T> {}

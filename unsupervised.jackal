@@ -1,4 +1,5 @@
 import unsupervised.KMeans
 
+@final
 class Kme : KMeans {}
 

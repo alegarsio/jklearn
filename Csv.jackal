@@ -1,5 +1,8 @@
 import Loader.csv
 import Loader.advance.SmartCsv
 
+@final
 class LoadCsv extends Csv {}
+
+@final
 class Tcsv extends SmartCsv {}
