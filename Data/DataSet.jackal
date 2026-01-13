@@ -1,10 +1,11 @@
 import Processor.PreProcessor
+import Abstract.General
 
 /**
  * @author Alegrarsio gifta lesmana
  * the dataset class is the wrapper class for your data set
 **/
-class DataSet extends PreProcessor {
+class DataSet : PreProcessor, Exportable {
 
     /**
      * in the dataset constructor, the argument must be array in n demmension
@@ -13,6 +14,14 @@ class DataSet extends PreProcessor {
         this.data = data
         this.labels = labels
     }
+
+    /**
+     * exports()
+     * export is a function to get all data include labels and dataset 
+     * @return Array of dataset and labels
+    **/
+    @override 
+    func exports() -> Array = [this.data , this.labels]
 
     /**
      * shuffle()
@@ -69,16 +78,5 @@ class DataSet extends PreProcessor {
     }
 
 
-    /**
-     * exports()
-     * export is a function to get all data include labels and dataset 
-     * @return Array of dataset and labels
-    **/
 
-    func exports(){
-        return [this.data , this.labels]
-    }
-
-    
-        
 }
