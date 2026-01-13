@@ -3,5 +3,9 @@ import Tensors.Vector.BasicVector
 /**
  * this forward declaration is the part of tensor library
 **/
+
+@final
 class Tensor : SmartCsv {}
+
+@final
 class Vector : BasicVector {}
