@@ -1,0 +1,11 @@
+
+/**
+ * @author Alegrarsio gifta lesmana
+ * the Exportable interface can be used if the class have some exportable content 
+**/
+
+trait Exportable{
+    
+    func exports() ;
+
+}
