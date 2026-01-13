@@ -1,16 +1,40 @@
-class BasicMatrix {
+import Abstract.General
+/**
+ * @author Alegrarsio gifta
+ * The BasicMatrix Class provides the sets of function to do basic matrix operation
+**/
+class BasicMatrix, Exportable{
 
-    init(data : Array){
-        this.data = data
-    }
+    /**
+     * the basic constructor on basic matrix is also an array 
+     * @return None
+     * @param data with type Array
+    **/
+    init(data : Array) -> None = this.data = data
+
+    /**
+     * the det function use to get determinant on the matrix
+    **/
+    func det() = __matrix_det(this.data)
+
+    /**
+     * @override from Exportable interface in Abstract/General
+     * the basic constructor on basic matrix is also an array 
+     * @return Array of data
+    **/
+
+    @override
+    func exports() -> Array = this.data
+    
+    /**
+     * the transpose method is a method to do transpose operation on the matrix 
+     * you need use exports method to collect the result
+     * @return Array of data
+    **/
 
     func transpose(){
         this.data = native_transpose(this.data)
         return this
-    }
-
-    func det(){
-        return __matrix_det(this.data)
     }
 
     func scalarmul(scalar){
@@ -18,28 +42,47 @@ class BasicMatrix {
         return this
     }
 
-    func dot(other){
+    /**
+     * the dot method is a method to merge the information of another matrix 
+     * you need use exports method to collect the result
+     * @param other with type Array
+     * @return array of data
+    **/
+    func dot(other : Array) -> Array {
         this.data = __matrix_dot(this.data,other)
         return this
     }
 
-    func add(other){
+    /**
+     * the matrix add method is a method for get sum of 2 Matrix 
+     * @param other with type Array
+     * @return Array of data
+    **/
+    func add(other : Array) -> Array{
         this.data = __matrix_add(this.data,other)
         return this
     }
 
-    func sub(other){
+    /**
+     * the matrix sub method is use to get subtract value of 2 matrix
+     * @param other with type Array
+     * @return Array of data
+    **/
+    func sub(other : Array) -> Array{
         this.data = __matrix_sub(this.data,other)
         return this
     }
 
-    func correlate(otherArray) {
+    /**
+     * the correlate method is a method to get coorelate value of 2 Array or Matrix
+     * @param otherArray with type Array
+     * @return Int for coorelate value
+    **/
+    func correlate(otherArray : Array) -> Int {
         let score = native_correlate(this.data, otherArray)
         return score
     }
 
-    func exports(){
-        return this.data
-    }
+    
 
 }
